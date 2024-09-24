@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-09-24T07:37:45.547803" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="c:\Users\Kolawat\Desktop\CE KMITL\year3_1\SoftDevPrac\api-robot\test.robot">
+<test id="s1-t1" name="Test Plus Numbers 4 and 2" line="13">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:47.702138" level="INFO">GET Request : url=http://localhost:5000/plus/4/2 
+ path_url=/plus/4/2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:47.703649" level="INFO">GET Response : url=http://localhost:5000/plus/4/2 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:47 GMT', 'Content-Type': 'application/json', 'Content-Length': '15', 'Connection': 'close'} 
+ body={"result":6.0}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:47.703649" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:45.665717" elapsed="2.037932"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:47.703649" elapsed="0.001009"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:47.704658" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:47.704658" level="INFO">${json_resp} = {'result': 6.0}</msg>
+<var>${json_resp}</var>
+<arg>4</arg>
+<arg>2</arg>
+<status status="PASS" start="2024-09-24T07:37:45.665717" elapsed="2.038941"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-09-24T07:37:47.705655" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${json_resp['result']}</arg>
+<arg>${6}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:47.705655" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:45.664198" elapsed="2.041457"/>
+</test>
+<test id="s1-t2" name="Test Plus Numbers 8.4 and 4" line="17">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:49.750735" level="INFO">GET Request : url=http://localhost:5000/plus/8.4/4 
+ path_url=/plus/8.4/4 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:49.750735" level="INFO">GET Response : url=http://localhost:5000/plus/8.4/4 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:49 GMT', 'Content-Type': 'application/json', 'Content-Length': '16', 'Connection': 'close'} 
+ body={"result":12.4}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:49.751736" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:47.707660" elapsed="2.044076"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:49.751736" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:49.751736" elapsed="0.001128"/>
+</return>
+<msg time="2024-09-24T07:37:49.752864" level="INFO">${json_resp} = {'result': 12.4}</msg>
+<var>${json_resp}</var>
+<arg>8.4</arg>
+<arg>4</arg>
+<status status="PASS" start="2024-09-24T07:37:47.706665" elapsed="2.046199"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_resp['result']}</arg>
+<arg>${12.4}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:49.752864" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:47.706665" elapsed="2.047205"/>
+</test>
+<test id="s1-t3" name="Test Plus Numbers 8.4 and 4.6" line="21">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:51.797261" level="INFO">GET Request : url=http://localhost:5000/plus/8.4/4.6 
+ path_url=/plus/8.4/4.6 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:51.797261" level="INFO">GET Response : url=http://localhost:5000/plus/8.4/4.6 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:51 GMT', 'Content-Type': 'application/json', 'Content-Length': '16', 'Connection': 'close'} 
+ body={"result":13.0}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:51.797261" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:49.754882" elapsed="2.042379"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:51.798288" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:51.798288" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:51.798288" level="INFO">${json_resp} = {'result': 13.0}</msg>
+<var>${json_resp}</var>
+<arg>8.4</arg>
+<arg>4.6</arg>
+<status status="PASS" start="2024-09-24T07:37:49.754882" elapsed="2.043406"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_resp['result']}</arg>
+<arg>${13.0}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:51.799804" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:49.754882" elapsed="2.044922"/>
+</test>
+<test id="s1-t4" name="Test Plus Numbers -5 and -6" line="25">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:53.826298" level="INFO">GET Request : url=http://localhost:5000/plus/-5/-6 
+ path_url=/plus/-5/-6 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:53.827308" level="INFO">GET Response : url=http://localhost:5000/plus/-5/-6 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:53 GMT', 'Content-Type': 'application/json', 'Content-Length': '17', 'Connection': 'close'} 
+ body={"result":-11.0}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:53.827308" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:51.801812" elapsed="2.025496"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:53.827308" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:53.828308" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:53.828308" level="INFO">${json_resp} = {'result': -11.0}</msg>
+<var>${json_resp}</var>
+<arg>-5</arg>
+<arg>-6</arg>
+<status status="PASS" start="2024-09-24T07:37:51.801812" elapsed="2.026496"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-09-24T07:37:53.829304" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${json_resp['result']}</arg>
+<arg>${-11}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:53.828308" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:51.800813" elapsed="2.028491"/>
+</test>
+<test id="s1-t5" name="Test Plus Numbers -5 and 6" line="29">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:55.873563" level="INFO">GET Request : url=http://localhost:5000/plus/-5/6 
+ path_url=/plus/-5/6 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:55.873563" level="INFO">GET Response : url=http://localhost:5000/plus/-5/6 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '15', 'Connection': 'close'} 
+ body={"result":1.0}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:55.873563" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:53.830304" elapsed="2.043259"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:55.873563" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:55.875074" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:55.875074" level="INFO">${json_resp} = {'result': 1.0}</msg>
+<var>${json_resp}</var>
+<arg>-5</arg>
+<arg>6</arg>
+<status status="PASS" start="2024-09-24T07:37:53.830304" elapsed="2.044770"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-09-24T07:37:55.876082" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${json_resp['result']}</arg>
+<arg>${1}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:55.875074" elapsed="0.001008"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:53.830304" elapsed="2.045778"/>
+</test>
+<test id="s1-t6" name="Test Plus Numbers 0 and 0" line="33">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:57.899922" level="INFO">GET Request : url=http://localhost:5000/plus/0/0 
+ path_url=/plus/0/0 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:57.899922" level="INFO">GET Response : url=http://localhost:5000/plus/0/0 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:57 GMT', 'Content-Type': 'application/json', 'Content-Length': '15', 'Connection': 'close'} 
+ body={"result":0.0}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:57.899922" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:55.877084" elapsed="2.022838"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:57.901429" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:57.901429" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:57.901429" level="INFO">${json_resp} = {'result': 0.0}</msg>
+<var>${json_resp}</var>
+<arg>0</arg>
+<arg>0</arg>
+<status status="PASS" start="2024-09-24T07:37:55.877084" elapsed="2.024345"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-09-24T07:37:57.902438" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>${json_resp['result']}</arg>
+<arg>${0}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:57.902438" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:55.876082" elapsed="2.027361"/>
+</test>
+<test id="s1-t7" name="Test Plus Numbers 8 and zero" line="37">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:37:59.946796" level="INFO">GET Request : url=http://localhost:5000/plus/8/%22zero%22 
+ path_url=/plus/8/%22zero%22 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:37:59.947793" level="INFO">GET Response : url=http://localhost:5000/plus/8/%22zero%22 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:37:59 GMT', 'Content-Type': 'application/json', 'Content-Length': '39', 'Connection': 'close'} 
+ body={"error_msg":"inputs must be numbers"}
+ 
+ </msg>
+<msg time="2024-09-24T07:37:59.947793" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:57.903443" elapsed="2.044350"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:59.947793" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:37:59.947793" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:37:59.947793" level="INFO">${json_resp} = {'error_msg': 'inputs must be numbers'}</msg>
+<var>${json_resp}</var>
+<arg>${8}</arg>
+<arg>"zero"</arg>
+<status status="PASS" start="2024-09-24T07:37:57.903443" elapsed="2.044350"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_resp['error_msg']}</arg>
+<arg>inputs must be numbers</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:37:59.949313" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:57.903443" elapsed="2.045870"/>
+</test>
+<test id="s1-t8" name="Test Plust Numbers Eight and Four" line="41">
+<kw name="GET plus JSON">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-24T07:38:01.979191" level="INFO">GET Request : url=http://localhost:5000/plus/%22Eight%22/%22Four%22 
+ path_url=/plus/%22Eight%22/%22Four%22 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-24T07:38:01.979191" level="INFO">GET Response : url=http://localhost:5000/plus/%22Eight%22/%22Four%22 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.1 Python/3.12.4', 'Date': 'Tue, 24 Sep 2024 00:38:01 GMT', 'Content-Type': 'application/json', 'Content-Length': '39', 'Connection': 'close'} 
+ body={"error_msg":"inputs must be numbers"}
+ 
+ </msg>
+<msg time="2024-09-24T07:38:01.979191" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>http://localhost:5000/plus/${num1}/${num2}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-24T07:37:59.951335" elapsed="2.027856"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:38:01.979191" elapsed="0.000997"/>
+</kw>
+<return>
+<value>${resp.json()}</value>
+<status status="PASS" start="2024-09-24T07:38:01.980188" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-24T07:38:01.980188" level="INFO">${json_resp} = {'error_msg': 'inputs must be numbers'}</msg>
+<var>${json_resp}</var>
+<arg>"Eight"</arg>
+<arg>"Four"</arg>
+<status status="PASS" start="2024-09-24T07:37:59.951335" elapsed="2.028853"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${json_resp['error_msg']}</arg>
+<arg>inputs must be numbers</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-24T07:38:01.981190" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-24T07:37:59.950336" elapsed="2.030854"/>
+</test>
+<status status="PASS" start="2024-09-24T07:37:45.549827" elapsed="16.432362"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
