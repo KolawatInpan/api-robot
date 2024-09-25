@@ -4,7 +4,7 @@ Library           RequestsLibrary
 *** Keywords ***
 GET plus JSON
     [Arguments]    ${num1}    ${num2}
-    ${resp}=     GET    http://localhost:8081/plus/${num1}/${num2}
+    ${resp}=     GET    http://localhost:5000/plus/${num1}/${num2}
     Should Be Equal    ${resp.status_code}    ${200}
     RETURN    ${resp.json()}
 
